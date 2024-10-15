@@ -1,0 +1,4 @@
+event_management\controller\HomeController.class
+event_management\config\RootConfig.class
+event_management\config\AppConfig.class
+event_management\config\WebInitializer.class
