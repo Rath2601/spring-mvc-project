@@ -1,0 +1,193 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <properties>
+    <configuration-finalName>event_management</configuration-finalName>
+  </properties>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.rath.event</groupId>
+	<artifactId>event_management</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	
+	<name>event_management</name>
+	
+	<dependencies>
+		<!-- Spring Core -->
+		
+		<!-- Basic building block for Spring that in conjunction
+		 with Spring Beans provides dependency injection and IoC features.-->
+		 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>6.1.12</version>
+		</dependency>
+
+		<!-- Spring Context -->
+		
+		<!-- Spring Context provides access to configured objects like a registry (a context).
+		 It inherits its features from Spring Beans and adds support for internationalization,
+		  event propagation, resource loading, and the transparent creation of contexts.-->
+		  
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>6.1.12</version>
+		</dependency>
+
+		<!-- Spring Web (MVC) -->
+		
+		<!-- Spring webmvc contains Spring’s model-view-controller (MVC) and REST Web Services
+		 implementation for web applications. It provides a clean separation between 
+		 domain model code and web forms and integrates with all of the 
+		 other features of the Spring Framework.-->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>6.1.12</version>
+		</dependency>
+
+		<!-- Spring ORM -->
+		
+		<!-- Spring Object/Relational Mapping which provides integration layers 
+		for popular object-relational mapping APIs, including JPA, JDO, and Hibernate.-->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>6.1.12</version>
+		</dependency>
+
+		<!-- Spring Transaction -->
+		
+		<!-- Support for programmatic and declarative transaction management for classes
+		 that implement special interfaces or any POJO.-->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>6.1.12</version>
+		</dependency>
+
+		<!-- MySQL Connector -->
+		
+		<!--MySQL Connector/J is a JDBC Type 4 driver, which means that it is pure 
+		Java implementation of the MySQL protocol and does not rely on the MySQL client libraries.
+		 This driver supports auto-registration with the Driver Manager, 
+		 standardized validity checks, categorized SQLExceptions, support for large update counts,
+		  support for local and offset date-time variants from the java.time package,
+		   support for JDBC-4.x XML processing, support for per connection client information
+		    and support for the NCHAR, NVARCHAR ...-->
+		
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.3.0</version>
+		</dependency>
+
+		<!-- Hibernate (if using) -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.1.1.Final</version>
+		</dependency>
+
+		<!-- JSTL for JSP -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- Servlet API -->
+		
+		<!--Java Servlet is the foundation web specification in the Java Enterprise Platform.
+		 Developers can build web applications using the Servlet API
+		  to interact with the request/response workflow.-->
+		
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Spring Security (Optional) -->
+		
+		<!--Spring Security is a powerful and highly customizable authentication and
+		 access-control framework. It provides protection against attacks like session fixation,
+		  clickjacking, cross site request forgery, etc-->
+		
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>6.3.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>2.0.16</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.16</version>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+	<finalName>event_management</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

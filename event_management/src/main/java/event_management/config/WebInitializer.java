@@ -2,6 +2,16 @@ package event_management.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+// In your project, you are using WebInitializer as the entry point, 
+// which extends AbstractAnnotationConfigDispatcherServletInitializer. 
+// This class initializes the DispatcherServlet without needing web.xml.
+//
+// @ AppConfig --> configures the MVC components, such as view resolvers and resource handlers.
+// @ RootConfig--> handles services and repositories.
+// @ WebInitializer--> maps the servlet and configures the root and servlet contexts.
+//
+// This setup is completely functional for your annotation-based Spring MVC configuration.
+
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
